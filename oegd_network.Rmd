@@ -1,0 +1,71 @@
+---
+title: "ÖGD_Netzwerk"
+author: "Jakob Schumacher"
+date: "24 März 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressWarnings(suppressMessages(library(igraph)))
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(networkD3)))
+setwd(here::here())
+```
+
+
+```{r}
+nodes <- read.csv("nodes.csv", sep = ",")
+# nodes$name <- as.integer(nodes$name)
+
+# Create edge list out of node list
+# edges <- expand.grid(nodes$Abkuerzung, nodes$Abkuerzung)  
+# edges <- edges[order(edges$Var1),]
+# edges <- edges[duplicated(t(apply(edges, 1, sort))),]
+# write.csv(edges, file = "edges.csv")
+
+
+
+edges <- read.csv("edges_schumacher.csv", sep = ",")
+edges <- edges[edges$value > 3,]
+edges$source <- as.integer(edges$source) 
+edges$target <- as.integer(edges$target)
+
+```
+
+
+```{r}
+forceNetwork(Links = edges, Nodes = nodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name", Nodesize = "size",
+            opacity = 0.4)
+```
+
+
+
+```{r}
+net <- graph_from_data_frame(d = edges, vertices = nodes, directed = T) 
+
+class(net)
+plot(net)
+```
+
+
+# Der ÖGD ist ein Teil des Gesundheitswesens
+
+# Weight = Jährliche Anzahl der Kontakt bei denen eine relevante Information ausgetauscht wird
+
+
+
+
+```{r}
+# Load data
+data(MisLinks)
+data(MisNodes)
+
+# Plot
+forceNetwork(Links = MisLinks, Nodes = MisNodes,
+            Source = "source", Target = "target",
+            Value = "value", NodeID = "name",
+            Group = "group", opacity = 0.8)
+```
+

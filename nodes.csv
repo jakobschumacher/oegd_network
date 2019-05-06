@@ -1,0 +1,23 @@
+name,size,fullname,complete_size,Grundlage der Groessenschaetzung,group
+GA,5,Gesundheitsamt,32000,GA RDF hat 100 Personen auf 200000 Personen ,1
+LS,4,Landesstellen,6400,Eine LS ca 400 Personen,1
+RKI,4,Robert Koch-Institut,1300,Wissen,1
+BMG,4,Bundesministerium für Gesundheit,2000,Schätzung,1
+GKV,6,Gesetzliche Krankenversicherung,180000,AOK hat 61600 und 30 Proz Marktanteil,1
+GKVS,3,Spitzenverband der Gesetzliche Krankenversicherungen,500,Schätzung,1
+A,6,Aerzte,392000,Statista,1
+L ,5,Labore,15000,1500 Laborärzte Siehe Webseite BDL pro Arzt 10 Mitarbeiter,1
+LL,4,Landeslabore,1000,Schätzung,1
+UBA,4,Umweltbundesamt,1600,Webseite UBA,1
+PEI,4,Paul Ehrlich-Institut,1500,Schätzung,1
+BfARM,4,Bundesinstitut für Arzneimittel und Medizinprodukte,1500,Schätzung,1
+BBK,4,Bundesamt für Bevölkerungsschutz und Katastrophenhilfe,1500,Schätzung,1
+BzgA,4,Bundeszentrale für gesundheitliche Aufklärung,1500,Schätzung,1
+KBV,3,Kassenärztliche Bundesvereinigung,400,40 Abteilungen im Organigramm,1
+AK,3,Aerztekammer,500,Schätzung,1
+GBA,3,Gemeinsamer Bundesausschuss,500,Schätzung,1
+ECDC,4,European center for disease control,1500,Schätzung,1
+IQWIG,3,Institut für Qualität und Wirtschaftlichkeit im Gesundheitswesen,500,Schätzung,1
+IQTIG,3,Institut für Qualitätssicherung und Transparenz im Gesundheitswesen,500,Schätzung,1
+LM,3,Landesministerien,500,Schätzung,1
+B ,7,Bevölkerung,8300000,Wissen,1
