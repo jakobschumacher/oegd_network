@@ -17,36 +17,46 @@ setwd(here::here())
 ```{r}
 nodes <- read.csv("nodes.csv", sep = ",")
 # nodes$name <- as.integer(nodes$name)
-
-# Create edge list out of node list
-# edges <- expand.grid(nodes$Abkuerzung, nodes$Abkuerzung)  
-# edges <- edges[order(edges$Var1),]
-# edges <- edges[duplicated(t(apply(edges, 1, sort))),]
-# write.csv(edges, file = "edges.csv")
-
-
+nodes$membership <- nodes$group
+nodes$group <- NULL
 
 edges <- read.csv("edges_schumacher.csv", sep = ",")
-edges <- edges[edges$value > 3,]
-edges$source <- as.integer(edges$source) 
-edges$target <- as.integer(edges$target)
+
+edges <- edges %>% 
+  mutate(value = ifelse(value > 3, value, NA)) %>% 
+  na.omit()
 
 ```
 
 
 ```{r}
-forceNetwork(Links = edges, Nodes = nodes, Source = "source",
-             Target = "target", Value = "value", NodeID = "name", Nodesize = "size",
-            opacity = 0.4)
+forceNetwork(Links = "edges", 
+             Nodes = "nodes", 
+             Source = "source",
+             Target = "target", 
+             Value = "value", 
+             NodeID = "name", 
+             Nodesize = "size", 
+             membership = "groups",  
+             opacity = 0.4)
 ```
 
 
 
 ```{r}
-net <- graph_from_data_frame(d = edges, vertices = nodes, directed = T) 
+net <- graph_from_data_frame(d = edges, vertices = nodes, directed = F) 
 
-class(net)
-plot(net)
+E(net)$weight <- edges$value
+
+V(net)$size <- 10^V(net)$size
+
+plot(net, 
+     vertex.label.color = "black", 
+     vertex.label.dist = 1,
+     vertex.size = 7,
+     main = "ÖGD Netzwerk")
+
+
 ```
 
 
@@ -67,5 +77,21 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes,
             Source = "source", Target = "target",
             Value = "value", NodeID = "name",
             Group = "group", opacity = 0.8)
+```
+
+
+
+```{r}
+netd3 <- igraph_to_networkD3(net, group = membership)
+# forceNetwork(Links = netd3$links, Nodes = netd3$nodes, Source = 'source', Target = 'target', NodeID = 'name')
+```
+
+
+```{r}
+# Create edge list out of node list
+# edges <- expand.grid(nodes$Abkuerzung, nodes$Abkuerzung)  
+# edges <- edges[order(edges$Var1),]
+# edges <- edges[duplicated(t(apply(edges, 1, sort))),]
+# write.csv(edges, file = "edges.csv")
 ```
 
