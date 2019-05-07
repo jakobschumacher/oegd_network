@@ -66,10 +66,11 @@ oegd_network <- forceNetwork(Links = edges,
 oegd_network <- oegd_network %>% 
   htmlwidgets::prependContent(htmltools::tags$h1("ÖGD-Netzwerk")) %>% 
   htmlwidgets::prependContent(htmltools::tags$p("Knoten = durch Jakob Schumacher geschätzten Anzahl aller Mitarbeitenden der Einrichtung. Größenformel= 2^10log(Anzahl)")) %>%  
-  htmlwidgets::prependContent(htmltools::tags$p("Links = durch Jakob Schumacher geschätzte jährliche Anzahl der Kontakt bei denen eine relevante Information ausgetauscht wird. Größenformel = Anzahl/10")) 
+  htmlwidgets::prependContent(htmltools::tags$p("Links = durch Jakob Schumacher geschätzte jährliche Anzahl der Kontakt bei denen eine relevante Information ausgetauscht wird. Größenformel = Anzahl/10")) %>% 
+  htmlwidgets::prependContent(htmltools::tags$p("Zoom mit Strg + Mausrad")) 
 
 # Netzwerk speichern
-oegd_network
-#saveNetwork(oegd_network, file = 'index.html')
+#oegd_network
+saveNetwork(oegd_network, file = 'index.html')
 
 ```
