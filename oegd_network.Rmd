@@ -16,82 +16,49 @@ setwd(here::here())
 
 ```{r}
 nodes <- read.csv("nodes.csv", sep = ",")
-# nodes$name <- as.integer(nodes$name)
-nodes$membership <- nodes$group
-nodes$group <- NULL
-
+nodes$id <- c(0:(nrow(nodes) - 1))
 edges <- read.csv("edges_schumacher.csv", sep = ",")
 
 edges <- edges %>% 
-  mutate(value = ifelse(value > 3, value, NA)) %>% 
+  left_join(nodes %>% 
+              select(name, id) %>% 
+              rename(source = name), by = "source") %>% 
+  select(source = id, value, target) %>% 
+    left_join(nodes %>% 
+              select(name, id) %>% 
+              rename(target = name), by = "target") %>% 
+  select(source, target = id, value) 
+
+edges <- edges %>% 
+  mutate(value = ifelse(value > 4, value, NA)) %>% 
   na.omit()
 
+nodes <- nodes %>% 
+  select(id, size, group, fullname )
+
 ```
 
 
 ```{r}
-forceNetwork(Links = "edges", 
-             Nodes = "nodes", 
-             Source = "source",
-             Target = "target", 
-             Value = "value", 
-             NodeID = "name", 
-             Nodesize = "size", 
-             membership = "groups",  
-             opacity = 0.4)
+oegd_network <- forceNetwork(Links = edges, 
+             Nodes = nodes,
+            Source = "source", 
+            Target = "target",
+            Value = "value", 
+            NodeID = "fullname",
+            Group = "group", 
+            fontSize = 50,
+            opacity = 0.8,
+            linkWidth = JS("function(d) { return d.value/10; }"),
+            Nodesize = "size",
+            radiusCalculation = "Math.pow(2, d.nodesize)",
+            charge = -5000,
+            zoom = TRUE)  %>% 
+  htmlwidgets::prependContent(htmltools::tags$h1("ÖGD-Netzwerk")) %>% 
+  htmlwidgets::prependContent(htmltools::tags$p("Knoten = durch Jakob Schumacher geschätzten Anzahl aller Mitarbeitenden der Einrichtung. Größenformel= 2^10log(Anzahl)")) %>%  
+  htmlwidgets::prependContent(htmltools::tags$p("Links = durch Jakob Schumacher geschätzte jährliche Anzahl der Kontakt bei denen eine relevante Information ausgetauscht wird. Größenformel = Anzahl/10")) 
+
+oegd_network
+
+saveNetwork(oegd_network, file = 'index.html')
 ```
-
-
-
-```{r}
-net <- graph_from_data_frame(d = edges, vertices = nodes, directed = F) 
-
-E(net)$weight <- edges$value
-
-V(net)$size <- 10^V(net)$size
-
-plot(net, 
-     vertex.label.color = "black", 
-     vertex.label.dist = 1,
-     vertex.size = 7,
-     main = "ÖGD Netzwerk")
-
-
-```
-
-
-# Der ÖGD ist ein Teil des Gesundheitswesens
-
-# Weight = Jährliche Anzahl der Kontakt bei denen eine relevante Information ausgetauscht wird
-
-
-
-
-```{r}
-# Load data
-data(MisLinks)
-data(MisNodes)
-
-# Plot
-forceNetwork(Links = MisLinks, Nodes = MisNodes,
-            Source = "source", Target = "target",
-            Value = "value", NodeID = "name",
-            Group = "group", opacity = 0.8)
-```
-
-
-
-```{r}
-netd3 <- igraph_to_networkD3(net, group = membership)
-# forceNetwork(Links = netd3$links, Nodes = netd3$nodes, Source = 'source', Target = 'target', NodeID = 'name')
-```
-
-
-```{r}
-# Create edge list out of node list
-# edges <- expand.grid(nodes$Abkuerzung, nodes$Abkuerzung)  
-# edges <- edges[order(edges$Var1),]
-# edges <- edges[duplicated(t(apply(edges, 1, sort))),]
-# write.csv(edges, file = "edges.csv")
-```
-
