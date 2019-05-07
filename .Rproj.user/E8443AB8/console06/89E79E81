@@ -1,0 +1,121 @@
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31m2019_03_24_OEGD_Network.Rproj[m
+	[31medges.csv[m
+	[31medges_schumacher.csv[m
+	[31medges_schumacher_old.csv[m
+	[31mnodes.csv[m
+	[31moegd_network.Rmd[m
+	[31moegd_network.html[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t add *[K.
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t commit -m "First Version"
+[master (root-commit) 4a52064] First Version
+ 8 files changed, 2339 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 2019_03_24_OEGD_Network.Rproj
+ create mode 100644 edges.csv
+ create mode 100644 edges_schumacher.csv
+ create mode 100644 edges_schumacher_old.csv
+ create mode 100644 nodes.csv
+ create mode 100644 oegd_network.Rmd
+ create mode 100644 oegd_network.html
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t status
+On branch master
+nothing to commit, working tree clean
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git lo[K[K-log
+unknown option: -log
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git log
+[?1h=[33mcommit 4a520649dcfc65fcd41aee1b92f8ecf31b82f00b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m[m
+Author: Jakob Schumacher <jakob.schumacher@web.de>[m
+Date:   Mon May 6 08:39:50 2019 +0200[m
+[m
+    First Version[m
+[K[?1l>]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git add .
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git commit -m "Nicht funktionieren de version"
+[master 06666d3] Nicht funktionierende version
+ 1 file changed, 43 insertions(+), 17 deletions(-)
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git ce[Kheckout 4a520
+Note: checking out '4a520'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 4a52064 First Version
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git checkout 4a520[C[C-4a520b4a520 4a520
+Switched to a new branch '4a520'
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git checkout -b "[KHEAD
+fatal: 'HEAD' is not a valid branch name.
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ git checkout -b HEAD[K[K[K[K[Kgit st[K[Klog
+[?1h=[33mcommit 4a520649dcfc65fcd41aee1b92f8ecf31b82f00b[m[33m ([m[1;36mHEAD -> [m[1;32m4a520[m[33m)[m[m
+Author: Jakob Schumacher <jakob.schumacher@web.de>[m
+Date:   Mon May 6 08:39:50 2019 +0200[m
+[m
+    First Version[m
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t status
+On branch 4a520
+nothing to commit, working tree clean
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t checkout b[K-b master
+fatal: A branch named 'master' already exists.
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t checkout master
+Switched to branch 'master'
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   oegd_network.Rmd[m
+	[31mmodified:   oegd_network.html[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mindex.html[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t add .
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t commit -m "Working exampol[K[Kle with networkd3"
+[master e916394] Working example with networkd3
+ 3 files changed, 1275 insertions(+), 141 deletions(-)
+ create mode 100644 index.html
+ rewrite oegd_network.Rmd (75%)
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t remote add origin ^V[K^V[Khttps://github.com/jakobschumacher/oegd_network.git
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gitt push -u origin master
+Username for 'https://github.com': jakobschumacher
+Password for 'https://jakobschumacher@github.com': 
+Counting objects: 18, done.
+Delta compression using up to 4 threads.
+Compressing objects:   5% (1/17)   Compressing objects:  11% (2/17)   Compressing objects:  17% (3/17)   Compressing objects:  23% (4/17)   Compressing objects:  29% (5/17)   Compressing objects:  35% (6/17)   Compressing objects:  41% (7/17)   Compressing objects:  47% (8/17)   Compressing objects:  52% (9/17)   Compressing objects:  58% (10/17)   Compressing objects:  64% (11/17)   Compressing objects:  70% (12/17)   Compressing objects:  76% (13/17)   Compressing objects:  82% (14/17)   Compressing objects:  88% (15/17)   Compressing objects:  94% (16/17)   Compressing objects: 100% (17/17)   Compressing objects: 100% (17/17), done.
+Writing objects:   5% (1/18)   Writing objects:  11% (2/18)   Writing objects:  16% (3/18)   Writing objects:  22% (4/18)   Writing objects:  27% (5/18)   Writing objects:  33% (6/18)   Writing objects:  38% (7/18)   Writing objects:  44% (8/18)   Writing objects:  50% (9/18)   Writing objects:  55% (10/18)   Writing objects:  61% (11/18)   Writing objects:  66% (12/18)   Writing objects:  77% (14/18)   Writing objects:  83% (15/18)   Writing objects:  88% (16/18)   Writing objects:  94% (17/18)   Writing objects: 100% (18/18)   Writing objects: 100% (18/18), 428.35 KiB | 4.56 MiB/s, done.
+Total 18 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/4)   [Kremote: Resolving deltas:  50% (2/4)   [Kremote: Resolving deltas:  75% (3/4)   [Kremote: Resolving deltas: 100% (4/4)   [Kremote: Resolving deltas: 100% (4/4), done.[K
+To https://github.com/jakobschumacher/oegd_network.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t add .

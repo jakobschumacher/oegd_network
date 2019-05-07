@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1553459222787.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B37A01BA",
+    "lastKnownWriteTime" : 1557236316,
+    "last_content_update" : 1557236316771,
+    "path" : "~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network/oegd_network.Rmd",
+    "project_path" : "oegd_network.Rmd",
+    "properties" : {
+        "cursorPosition" : "17,35",
+        "scrollLine" : "4",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
