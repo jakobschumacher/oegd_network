@@ -5,8 +5,7 @@ date: "24 März 2019"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup}
 suppressWarnings(suppressMessages(library(igraph)))
 suppressWarnings(suppressMessages(library(dplyr)))
 suppressWarnings(suppressMessages(library(networkD3)))
@@ -15,10 +14,16 @@ setwd(here::here())
 
 
 ```{r}
+# Read in data
 nodes <- read.csv("nodes_schumacher.csv", sep = ",")
-nodes$id <- c(0:(nrow(nodes) - 1))
 edges <- read.csv("edges_schumacher.csv", sep = ",")
 
+
+# Umwandeln der Namen der Nodes in Ziffern
+nodes$id <- c(0:(nrow(nodes) - 1))
+
+
+# Source und Target durch ID ersetzen
 edges <- edges %>% 
   left_join(nodes %>% 
               select(name, id) %>% 
@@ -29,6 +34,7 @@ edges <- edges %>%
               rename(target = name), by = "target") %>% 
   select(source, target = id, value) 
 
+# Cut-off für edges$value
 edges <- edges %>% 
   mutate(value = ifelse(value > 4, value, NA)) %>% 
   na.omit()
@@ -40,6 +46,7 @@ nodes <- nodes %>%
 
 
 ```{r}
+# Netzwerk erstellen
 oegd_network <- forceNetwork(Links = edges, 
              Nodes = nodes,
             Source = "source", 
@@ -51,14 +58,18 @@ oegd_network <- forceNetwork(Links = edges,
             opacity = 0.8,
             linkWidth = JS("function(d) { return d.value/10; }"),
             Nodesize = "size",
-            radiusCalculation = "Math.pow(2, d.nodesize)",
-            charge = -5000,
-            zoom = TRUE)  %>% 
+            radiusCalculation = JS("Math.pow(2, d.nodesize)"),
+            charge = -3000,
+            zoom = TRUE) 
+
+# Beschreibung hinzufügen
+oegd_network <- oegd_network %>% 
   htmlwidgets::prependContent(htmltools::tags$h1("ÖGD-Netzwerk")) %>% 
   htmlwidgets::prependContent(htmltools::tags$p("Knoten = durch Jakob Schumacher geschätzten Anzahl aller Mitarbeitenden der Einrichtung. Größenformel= 2^10log(Anzahl)")) %>%  
   htmlwidgets::prependContent(htmltools::tags$p("Links = durch Jakob Schumacher geschätzte jährliche Anzahl der Kontakt bei denen eine relevante Information ausgetauscht wird. Größenformel = Anzahl/10")) 
 
+# Netzwerk speichern
 oegd_network
+#saveNetwork(oegd_network, file = 'index.html')
 
-saveNetwork(oegd_network, file = 'index.html')
 ```
