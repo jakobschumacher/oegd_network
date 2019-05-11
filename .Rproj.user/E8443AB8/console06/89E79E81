@@ -214,3 +214,17 @@ remote: Resolving deltas:   0% (0/8)   [Kremote: Resolving deltas:  12% (1/8) 
 To https://github.com/jakobschumacher/oegd_network.git
    f6c51c6..7730c28  master -> master
 gi t add .
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t commit -m "Red[Kadme ausgebaut"
+[master 972e2b0] Readme ausgebaut
+ 3 files changed, 5 insertions(+), 2 deletions(-)
+ rewrite .Rproj.user/E8443AB8/console06/INDEX001 (88%)
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gi t push origin master
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
+Writing objects:  12% (1/8)   Writing objects:  25% (2/8)   Writing objects:  37% (3/8)   Writing objects:  50% (4/8)   Writing objects:  62% (5/8)   Writing objects:  75% (6/8)   Writing objects:  87% (7/8)   Writing objects: 100% (8/8)   Writing objects: 100% (8/8), 817 bytes | 408.00 KiB/s, done.
+Total 8 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/5)   [Kremote: Resolving deltas:  20% (1/5)   [Kremote: Resolving deltas:  40% (2/5)   [Kremote: Resolving deltas:  60% (3/5)   [Kremote: Resolving deltas:  80% (4/5)   [Kremote: Resolving deltas: 100% (5/5)   [Kremote: Resolving deltas: 100% (5/5), completed with 5 local objects.[K
+To https://github.com/jakobschumacher/oegd_network.git
+   322e137..972e2b0  master -> master
+]0;/home/jakob/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network]0;jakob@quartierlatin: ~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[01;32mjakob@quartierlatin[00m:[01;34m~/Dokumente/03_Projekte/Statistik und Software/2019_03_24_OEGD_Network[00m$ gitt push origin master[C[Ccommit -m "Readme ausgebaut"[C[Cadd .[K
