@@ -7,7 +7,7 @@ output: html_document
 
 ```{r setup}
 suppressWarnings(suppressMessages(library(igraph)))
-suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(tidyverse)))
 suppressWarnings(suppressMessages(library(networkD3)))
 setwd(here::here())
 ```
@@ -74,3 +74,37 @@ oegd_network <- oegd_network %>%
 saveNetwork(oegd_network, file = 'index.html')
 
 ```
+
+
+
+
+```{r}
+library(ggmap)
+data <- read_csv("noeg.csv")
+
+
+locations <- data %>% 
+  mutate_geocode(Name)
+
+locations %>% na.omit()
+class(data)
+
+mutate_geocode("Bundesministerium für Gesundheit")
+
+
+df <- data.frame(
+  address = c("1600 Pennsylvania Avenue, Washington DC", "", "houston texas"),
+  stringsAsFactors = FALSE
+)
+
+## Not run:  # Server response can be slow; this cuts down check time.
+mutate_geocode(df, address)
+
+
+library(dplyr)
+df %>% mutate_geocode(address)
+
+## End(Not run)
+
+```
+
