@@ -17,6 +17,3 @@ Anzahl der Mitarbeitenden
 
 ## Bewertung der Links
 Durch Jakob Schumacher geschätzte jährliche Anzahl der Kontakt bei denen eine relevante Information ausgetauscht wird. 
-
-# Mitmachen?
-Gerne. Gebraucht werden insbesondere Schätzungen, wie häufig die einzelnen Institutionen miteinander Kontakt haben.
