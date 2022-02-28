@@ -9,7 +9,7 @@ output: html_document
 suppressWarnings(suppressMessages(library(igraph)))
 suppressWarnings(suppressMessages(library(tidyverse)))
 suppressWarnings(suppressMessages(library(networkD3)))
-setwd(here::here())
+setwd(here::here("oegd_network"))
 ```
 
 
@@ -78,7 +78,7 @@ saveNetwork(oegd_network, file = 'index.html')
 
 
 
-```{r}
+```{r, eval=FALSE}
 library(ggmap)
 data <- read_csv("noeg.csv")
 
